@@ -1,0 +1,15 @@
+version: "3"
+services:
+  node-app:
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGO_USER=abhay
+      - MONGO_PASSWORD=root
+    command: npm run dev
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=abhay
+      - MONGO_INITDB_ROOT_PASSWORD=root
